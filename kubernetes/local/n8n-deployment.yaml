@@ -53,6 +53,13 @@ spec:
               value: http
             - name: N8N_PORT
               value: "5678"
+            - name: GENERIC_TIMEZONE
+              value: America/Argentina/Cordoba
+              # default setting is true, which means that cookies are only sent over HTTPS.
+              # ingress note: If you're running n8n without HTTPS on a domain other than localhost, 
+              # you can disable the secure flag by setting the N8N_SECURE_COOKIE environment variable to false. 
+            - name: N8N_SECURE_COOKIE
+              value: "false"
           image: n8nio/n8n
           name: n8n
           ports:
